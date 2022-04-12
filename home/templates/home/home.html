@@ -10,27 +10,27 @@
 {% endblock %}
 
 {% block container %}
-{#    <div class="row">#}
-{#        <div class="col d-flex justify-content-center">#}
-{#            {% for course in courses %}#}
-{#                <div class="card mb-3 me-3" style="width: 18rem;">#}
-{#                    <img src="{{ course.camping_image.url }}" class="card-img-top" alt="{{ course.name }}">#}
-{#                    <div class="card-body">#}
-{#                        <h5 class="card-title">{{ course.name }}</h5>#}
-{#                        <h6 class="card-subtitle mb-2 text-muted">{{ course.created|date }}</h6>#}
-{#                        <h6 class="card-subtitle mb-2 text-muted">{{ course.owner.fullname }}</h6>#}
-{#                        <h6 class="card-subtitle mb-2 text-muted">{{ course.place }}</h6>#}
-{#                        <p class="card-text">{{ course.overview }}</p>#}
-{#                    </div>#}
-{#                    <div class="card-body">#}
-{#                        <a href="#" class="card-link">Card link</a>#}
-{#                        <a href="#" class="card-link">Another link</a>#}
-{#                    </div>#}
-{#                </div>#}
-{#            {% empty %}#}
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            {% for camping in campings %}
+                <div class="card mb-3 me-3" style="width: 18rem;">
+                    <img src="{{ camping.camping_image.url }}" class="card-img-top" alt="{{ camping.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ camping.name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ camping.created|date }}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ camping.owner.fullname }}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ camping.place }}</h6>
+                        <p class="card-text">{{ camping.overview }}</p>
+                    </div>
+                    <div class="card-body">
+                        <a href="#" class="btn btn-light">Reserve now!</a>
+                        <a href="#" class="btn btn-primary">More info</a>
+                    </div>
+                </div>
+            {% empty %}
                 <h3>Something is no yes.</h3>
-{#            {% endfor %}#}
-{#        </div>#}
-{#    </div>#}
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
 

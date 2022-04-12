@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     # local
     'home.apps.HomeConfig',
     'users.apps.UsersConfig',
-    'campings.apps.CampingsConfig'
+    'campings.apps.CampingsConfig',
 ]
 
 MIDDLEWARE = [
