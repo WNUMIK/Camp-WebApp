@@ -1,4 +1,4 @@
-# LMS ultimate edition
+# Camp App
 
 ## Django strategy:
 1. Dodaj apke do installed_apps (settings)
