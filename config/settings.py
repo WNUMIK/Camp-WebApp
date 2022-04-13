@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'crispy_forms',
     'crispy_bootstrap5',
+    # 'star_ratings',
+    # 'djreservation',
 
     # local
     'home.apps.HomeConfig',
@@ -59,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'djreservation.middleware.ReservationMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -156,3 +159,11 @@ LOGIN_REDIRECT_URL = 'home:home'
 LOGOUT_REDIRECT_URL = 'home:home'
 
 AUTH_USER_MODEL = 'users.Account'
+AUTH_PROFILE_MODULE = 'users.UserProfile'
+
+# DJ RESERVATION
+# DEFAULT_FROM_EMAIL = "mail@example.com"
+# EMAIL_HOST = "localhost"
+# EMAIL_PORT = "5432"
+
+# STAR_RATINGS_ANONYMOUS = True

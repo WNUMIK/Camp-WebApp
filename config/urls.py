@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('home.urls')),
     path('users/', include('users.urls')),
     path('campings/', include('campings.urls')),
+    # path('ratings/', include('star_ratings.urls', namespace='ratings')),
 ]
 
 if settings.DEBUG:

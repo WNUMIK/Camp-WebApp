@@ -23,8 +23,12 @@
                         <p class="card-text">{{ camping.overview }}</p>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="btn btn-light">Reserve now!</a>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'campings:reserve-camping' %}" class="btn btn-light">Reserve now!</a>
+                        {% else %}
+                        <a href="{% url 'users:login' %}" class="btn btn-light">Reserve now!</a>
                         <a href="#" class="btn btn-primary">More info</a>
+                        {% endif %}
                     </div>
                 </div>
             {% empty %}

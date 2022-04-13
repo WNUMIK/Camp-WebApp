@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Search{% endblock %}
+
+{% block search %}
+    <h1>Search Results</h1>
+    {% for camping in camping_list %}
+    <div>
+        <h3><a href="{{ camping.get_absolut_url }}">{{ camping.name }}</a></h3>
+        <p>Owner: {{ camping.owner }}</p>
+    </div>
+    {% endfor %}
+{% endblock %}

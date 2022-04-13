@@ -9,9 +9,16 @@ from django.utils.text import slugify
 from campings.fields import OrderField
 
 
+class Reservation(models.Model):
+    camping = models.ForeignKey('Camping', related_name='reservations', on_delete=models.CASCADE)
+    start_date = models.DateField()
+    end_date = models.DateField()
+    people_number = models.PositiveIntegerField(verbose_name='number of people')
+
+
 class Place(models.Model):
-    name = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200, unique=True)
+    name = models.CharField(max_length=20)
+    slug = models.SlugField(max_length=20, unique=True)
 
     def __str__(self):
         return self.name
@@ -28,8 +35,8 @@ class Place(models.Model):
 class Camping(models.Model):
     owner = models.ForeignKey(get_user_model(), related_name='campings_creator', on_delete=models.CASCADE)
     place = models.ForeignKey('Place', related_name='campings', on_delete=models.CASCADE)
-    name = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200, unique=True, blank=True)
+    name = models.CharField(max_length=20)
+    slug = models.SlugField(max_length=20, unique=True, blank=True)
     overview = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     regular = models.ManyToManyField(get_user_model(), related_name='camping_users', blank=True)
@@ -49,7 +56,7 @@ class Camping(models.Model):
 
 class Type(models.Model):
     camp = models.ForeignKey('Camping', related_name='types', on_delete=models.CASCADE)
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=20)
     description = models.TextField(blank=True, default='')
     order = OrderField(blank=True, for_fields=['camping'])
 
