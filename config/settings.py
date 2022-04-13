@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get('DEBUG', default=0))
-
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS').split()
 INTERNAL_IPS = ALLOWED_HOSTS
 
@@ -95,13 +95,13 @@ DATABASES = {
     }
 }
 
-# TODO uncomment to connect to postgres
-# DATABASE_URL = os.environ.get('DATABASE_URL')
-# db_from_env = dj_database_url.config(
-#     default=DATABASE_URL, conn_max_age=500, ssl_require=False
-# )
-#
-# DATABASES['default'].update(db_from_env)
+
+DATABASE_URL = os.environ.get('DATABASE_URL')
+db_from_env = dj_database_url.config(
+    default=DATABASE_URL
+)
+
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -160,6 +160,8 @@ LOGOUT_REDIRECT_URL = 'home:home'
 
 AUTH_USER_MODEL = 'users.Account'
 AUTH_PROFILE_MODULE = 'users.UserProfile'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # DJ RESERVATION
 # DEFAULT_FROM_EMAIL = "mail@example.com"

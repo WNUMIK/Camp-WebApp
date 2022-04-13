@@ -22,6 +22,8 @@ Django = "==4.0.3"
 Pillow = "==9.1.0"
 django-reservation = "*"
 django-star-ratings = "*"
+psycopg2 = "*"
+whitenoise = "*"
 
 [dev-packages]
 
