@@ -169,3 +169,5 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # EMAIL_PORT = "5432"
 
 # STAR_RATINGS_ANONYMOUS = True
+
+CSRF_TRUSTED_ORIGINS = ('https://bbcamp.herokuapp.com/',)
