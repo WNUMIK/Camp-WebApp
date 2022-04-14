@@ -24,6 +24,7 @@ django-reservation = "*"
 django-star-ratings = "*"
 psycopg2 = "*"
 whitenoise = "*"
+gunicorn = "*"
 
 [dev-packages]
 
