@@ -36,16 +36,15 @@ class CreateCampingView(LoginRequiredMixin, PermissionRequiredMixin, CreateView)
 
 class ReserveCampingView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     model = models.Reservation
-    fields = ('camping', 'start_date', 'end_date', 'people_number')
+    fields = ('camping', 'check_in', 'check_out', 'people_number')
     template_name = 'campings/reserve_camping.html'
-    permission_required = 'campings.view_camping'
+    permission_required = 'campings.add_reservation'
     login_url = reverse_lazy('users:login')
     raise_exception = True
     success_url = reverse_lazy('home:home')
 
-    # def form_valid(self, form):
-    #     form.instance.regular = self.request.user
-    #     return super().form_valid(form)
+    def form_valid(self, form):
+        form.instance.regular = self.request.user
+        return super().form_valid(form)
 
-# class CampingReservation(CreateReservation):
-#     model =
+

@@ -7,13 +7,15 @@ from django.template.loader import render_to_string
 from django.utils.text import slugify
 
 from campings.fields import OrderField
+from users.models import Account
 
 
 class Reservation(models.Model):
     camping = models.ForeignKey('Camping', related_name='reservations', on_delete=models.CASCADE)
-    start_date = models.DateField()
-    end_date = models.DateField()
-    people_number = models.PositiveIntegerField(verbose_name='number of people')
+    # user = models.ForeignKey(Account, default='', related_name='users_reservation', on_delete=models.CASCADE)
+    check_in = models.DateField(default='YYYY-MM-DD')
+    check_out = models.DateField(default='YYYY-MM-DD')
+    people_number = models.PositiveSmallIntegerField(verbose_name='Guests')
 
 
 class Place(models.Model):
@@ -55,7 +57,7 @@ class Camping(models.Model):
 
 
 class Type(models.Model):
-    camp = models.ForeignKey('Camping', related_name='types', on_delete=models.CASCADE)
+    camping = models.ForeignKey('Camping', related_name='types', on_delete=models.CASCADE)
     name = models.CharField(max_length=20)
     description = models.TextField(blank=True, default='')
     order = OrderField(blank=True, for_fields=['camping'])
