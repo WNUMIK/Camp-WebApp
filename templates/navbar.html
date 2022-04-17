@@ -26,6 +26,11 @@
                 <a class="nav-link active" aria-current="page" href="{% url 'campings:list-camping' %}">Camps List</a>
                 <a class="nav-link active" aria-current="page" href="{% url 'home:home' %}">Reservation</a>
 
+                 <form class="d-flex" action="{% url 'campings:search-camping' %}" method='GET'>
+                   {% csrf_token %}
+                    <input class="form-control me-2" type="search" placeholder="Search by name" aria-label="Search" name="q">
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                 </form>
             </div>
         </div>
     </div>

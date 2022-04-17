@@ -9,4 +9,5 @@ urlpatterns = [
     path('reserve', views.ReserveCampingView.as_view(), name='reserve-camping'),
     path('list', views.CampingListView.as_view(), name='list-camping'),
     path('search', views.SearchResultsListView.as_view(), name='search-camping'),
+    path('details/<slug:slug>', views.CampingDetailView.as_view(), name='detail-camping'),
 ]

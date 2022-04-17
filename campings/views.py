@@ -1,19 +1,29 @@
 from django import forms
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from django.shortcuts import render
 
-# Create your views here.
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, View, ListView
+from django.views.generic import CreateView, ListView, DetailView
 
 from . import models
 from .models import Camping
 
 
+class CampingDetailView(DetailView):
+    model = Camping
+    template_name = 'campings/detail_view.html'
+
+
 class SearchResultsListView(ListView):
     model = Camping
-    context_object_name = 'camping_list'
     template_name = 'campings/search_results.html'
+
+    def get_queryset(self):
+        q = self.request.GET.get('q')
+        if q:
+            camping_list = self.model.objects.filter(name__icontains=q)
+        else:
+            camping_list = self.model.objects.none()
+        return camping_list
 
 
 class CampingListView(ListView):
@@ -57,5 +67,3 @@ class ReserveCampingView(LoginRequiredMixin, PermissionRequiredMixin, CreateView
     def form_valid(self, form):
         form.instance.regular = self.request.user
         return super().form_valid(form)
-
-

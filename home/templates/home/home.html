@@ -27,7 +27,7 @@
                         <a href="{% url 'campings:reserve-camping' %}" class="btn btn-light">Reserve now!</a>
                         {% else %}
                         <a href="{% url 'users:login' %}" class="btn btn-light">Reserve now!</a>
-                        <a href="#" class="btn btn-primary">More info</a>
+                        <a href="{% url 'campings:detail-camping' slug=camping.slug %}" class="btn btn-primary">More info</a>
                         {% endif %}
                     </div>
                 </div>

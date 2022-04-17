@@ -13,8 +13,8 @@ from users.models import Account
 class Reservation(models.Model):
     camping = models.ForeignKey('Camping', related_name='reservations', on_delete=models.CASCADE)
     # user = models.ForeignKey(Account, default='', related_name='users_reservation', on_delete=models.CASCADE)
-    check_in = models.DateField(default='YYYY-MM-DD')
-    check_out = models.DateField(default='YYYY-MM-DD')
+    check_in = models.DateField()
+    check_out = models.DateField()
     people_number = models.PositiveSmallIntegerField(verbose_name='Guests')
 
 

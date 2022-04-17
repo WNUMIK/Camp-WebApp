@@ -35,7 +35,7 @@ class CustomAccountManager(BaseUserManager):
 class Account(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=60, unique=True, verbose_name='email')
     fullname = models.CharField(max_length=30, unique=True)
-    is_owner = models.BooleanField(default=False)
+    is_owner = models.BooleanField(verbose_name='I am camping owner!', default=False)
     date_join = models.DateTimeField(verbose_name='date joined', auto_now_add=True)
     last_login = models.DateTimeField(verbose_name='last login', auto_now=True)
     is_admin = models.BooleanField(default=False)
