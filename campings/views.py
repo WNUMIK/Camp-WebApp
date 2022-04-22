@@ -9,15 +9,25 @@ from .models import Camping
 
 
 class CampingDetailView(DetailView):
+    """
+        Showing object details from given model using generic DetailView
+    """
     model = Camping
     template_name = 'campings/detail_view.html'
 
 
 class SearchResultsListView(ListView):
+    """
+        Search query for objects name using generic ListView
+    """
     model = Camping
     template_name = 'campings/search_results.html'
 
     def get_queryset(self):
+        """
+            Override method for queryset searching for query containing name of given object
+             from given model
+        """
         q = self.request.GET.get('q')
         if q:
             camping_list = self.model.objects.filter(name__icontains=q)
@@ -27,11 +37,18 @@ class SearchResultsListView(ListView):
 
 
 class CampingListView(ListView):
+    """
+        List of objects using generic ListView
+    """
+
     model = Camping
     template_name = 'campings/camping_list.html'
 
 
 class CreateCampingView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
+    """
+        Adding new object to model by form view using generic django views fn
+    """
     model = models.Camping
     fields = ('name', 'place', 'slug', 'overview', 'camping_image')
     template_name = 'campings/create_camping.html'
@@ -46,6 +63,10 @@ class CreateCampingView(LoginRequiredMixin, PermissionRequiredMixin, CreateView)
 
 
 class ReserveCampingView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
+    """
+        Reservation view for given model using generic django views fn
+    """
+
     model = models.Reservation
     fields = ('camping', 'check_in', 'check_out', 'people_number')
     template_name = 'campings/reserve_camping.html'
@@ -55,6 +76,9 @@ class ReserveCampingView(LoginRequiredMixin, PermissionRequiredMixin, CreateView
     success_url = reverse_lazy('home:home')
 
     def get_form(self, form_class=None):
+        """
+            Override method for form to display date type
+        """
         form = super().get_form(form_class)
         form.fields['check_in'].widget = forms.TextInput(
             attrs={'type': 'date'}
