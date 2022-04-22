@@ -2,8 +2,8 @@
 .vscode
 
 **/*.pyc
-db.sqlite3
-staticfiles/*
-media/images
+.DS_Store
 
 env/.env
+
+staticfiles/*

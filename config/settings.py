@@ -43,8 +43,6 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'crispy_forms',
     'crispy_bootstrap5',
-    # 'star_ratings',
-    # 'djreservation',
 
     # local
     'home.apps.HomeConfig',
