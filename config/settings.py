@@ -145,6 +145,7 @@ STATICFILES_FINDERS = [
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -158,13 +159,4 @@ LOGOUT_REDIRECT_URL = 'home:home'
 
 AUTH_USER_MODEL = 'users.Account'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-# DJ RESERVATION
-# DEFAULT_FROM_EMAIL = "mail@example.com"
-# EMAIL_HOST = "localhost"
-# EMAIL_PORT = "5432"
-
-# STAR_RATINGS_ANONYMOUS = True
-
-CSRF_TRUSTED_ORIGINS = ('https://bbcamp.herokuapp.com/',)
+CSRF_TRUSTED_ORIGINS = ('https://mwcamp.herokuapp.com/',)

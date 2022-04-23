@@ -11,7 +11,8 @@
 
 This is a simple camp app for people to search, add and reserve camping.
 
-
+## Demo:
+http://mwcamp.herokuapp.com/
 ## Features
 
 
