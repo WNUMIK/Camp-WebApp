@@ -19,4 +19,3 @@ def place(user):
 def camping(user, place):
     """Camping instance from camping model"""
     yield Camping.objects.create(name='Test', owner=user, place=place)
-
