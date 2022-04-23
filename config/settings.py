@@ -142,7 +142,7 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder'
 ]
 
-MEDIA_URL = 'http://s3.amazonaws.com/campbucket/'
+MEDIA_URL = 'http://s3.amazonaws.com/campbucket/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
