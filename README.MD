@@ -3,11 +3,10 @@
 ![Docker Automated build](https://img.shields.io/docker/automated/k1wsatz/camp-app-one) 
 ![GitHub Pipenv locked Python version](https://img.shields.io/github/pipenv/locked/python-version/k1wsatz/camp-app-one)
 
-
+# Camp app
 ![Logo](https://cdn4.iconfinder.com/data/icons/transportation-190/1000/camper_camper_car_camp_car_campsite_camper_van_bus-512.png)
 
 
-# Camp app
 
 This is a simple camp app for people to search, add and reserve camping.
 
