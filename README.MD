@@ -14,6 +14,9 @@ This is a simple camp app for people to search, add and reserve camping.
 
 - Fullscreen mode
 - Cross platform
+- Login & registry
+- Reserve or Add
+- Detail List
 
 
 ## Installation
