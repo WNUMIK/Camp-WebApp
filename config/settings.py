@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
 
-
     # local
     'home.apps.HomeConfig',
     'users.apps.UsersConfig',
@@ -95,14 +94,12 @@ DATABASES = {
     }
 }
 
-
 DATABASE_URL = os.environ.get('DATABASE_URL')
-db_from_env = dj_database_url.config(
-    default=DATABASE_URL
-)
+db_from_env = dj_database_url.config(conn_max_age=500,
+                                     default=DATABASE_URL
+                                     )
 
 DATABASES['default'].update(db_from_env)
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -159,7 +156,6 @@ LOGIN_REDIRECT_URL = 'home:home'
 LOGOUT_REDIRECT_URL = 'home:home'
 
 AUTH_USER_MODEL = 'users.Account'
-
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
