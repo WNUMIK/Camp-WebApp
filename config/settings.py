@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django_heroku',
     'crispy_forms',
     'crispy_bootstrap5',
+    'whitenoise.runserver_nostatic',
 
     # local
     'home.apps.HomeConfig',
