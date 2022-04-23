@@ -41,8 +41,10 @@ INSTALLED_APPS = [
 
     # 3rd party
     'debug_toolbar',
+    'django_heroku',
     'crispy_forms',
     'crispy_bootstrap5',
+
 
     # local
     'home.apps.HomeConfig',
@@ -53,7 +55,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -157,7 +159,7 @@ LOGIN_REDIRECT_URL = 'home:home'
 LOGOUT_REDIRECT_URL = 'home:home'
 
 AUTH_USER_MODEL = 'users.Account'
-AUTH_PROFILE_MODULE = 'users.UserProfile'
+
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 

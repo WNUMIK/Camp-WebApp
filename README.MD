@@ -26,6 +26,7 @@ Clone camp-app-one with git
 ```bash
   git clone git@github.com:k1wsatz/camp-app-one.git
   cd camp-app-one
+  python manage.py runserver
 ```
     
 ## Environment Variables

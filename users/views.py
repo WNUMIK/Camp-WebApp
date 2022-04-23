@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import Permission, Group
 from django.shortcuts import render, redirect
-from django.urls import reverse_lazy
+from django.urls import reverse
 
 from . import forms
 
@@ -18,7 +18,7 @@ def login_user_view(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return redirect(reverse_lazy('home:home'))
+                    return redirect(reverse('home:home'))
     else:
         form = forms.LoginForm()
 
@@ -27,7 +27,7 @@ def login_user_view(request):
 
 def logout_user(request):
     logout(request)
-    return redirect(reverse_lazy('users:login'))
+    return redirect(reverse('users:login'))
 
 
 def registration_view(request):
@@ -47,5 +47,5 @@ def registration_view(request):
                 regular_group = Group.objects.get(name='regular')
                 user.groups.add(regular_group)
                 user.user_permissions.add(permission)
-            return redirect(reverse_lazy('users:login'))
+            return redirect(reverse('users:login'))
     return render(request, 'users/registration.html', {'form': form})

@@ -6,3 +6,4 @@ def test_create_user(user, django_user_model):
 def test_change_password(user):
     user.set_password('secret')
     assert user.check_password('secret') is True
+
