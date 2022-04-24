@@ -26,14 +26,28 @@ http://mwcamp.herokuapp.com/
 
 ## Installation
 
-Clone camp-app-one with git
+Setup a local development environment:
+
+`pipenv shell`
+
+Clone camp-app-one with git:
 
 ```bash
   git clone git@github.com:k1wsatz/camp-app-one.git
   cd camp-app-one
-  python manage.py runserver
 ```
-    
+Install development dependencies:
+
+`pipenv install -r requirements.txt`
+
+Migrate Database:
+
+`python manage.py migrate`
+
+Run the web application locally:
+
+`python manage.py runserver`
+
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file. You can also use file `.env-default`, put there your own data and rename it to `.env` than run command `source env/.env` in terminal to activate.
