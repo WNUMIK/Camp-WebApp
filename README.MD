@@ -26,16 +26,17 @@ http://mwcamp.herokuapp.com/
 
 ## Installation
 
-Setup a local development environment:
-
-`pipenv shell`
-
 Clone camp-app-one with git:
 
 ```bash
   git clone git@github.com:k1wsatz/camp-app-one.git
   cd camp-app-one
 ```
+
+Setup a local development environment:
+
+`pipenv shell`
+
 Install development dependencies:
 
 `pipenv install -r requirements.txt`
