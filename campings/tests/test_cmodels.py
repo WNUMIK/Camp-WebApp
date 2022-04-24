@@ -17,3 +17,12 @@ def test_reservation(db, user, camping):
                                camping=camping)
     reservations = Reservation.objects.all()
     assert len(reservations) == 1
+
+
+def test_place(db, user):
+    """
+    Test creating object of model Place
+    """
+    Place.objects.create(name='TestPlace')
+
+    assert len(Place.objects.all()) == 1
