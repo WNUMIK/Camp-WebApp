@@ -1,7 +1,4 @@
-from django import views
-from django.shortcuts import render
 from django.views.generic import TemplateView
-
 
 from campings.models import Camping, Type
 

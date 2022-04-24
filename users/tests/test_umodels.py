@@ -12,4 +12,3 @@ def test_change_password(user):
     """
     user.set_password('secret')
     assert user.check_password('secret') is True
-
