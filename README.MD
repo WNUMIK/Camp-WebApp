@@ -1,5 +1,6 @@
 ![GitHub Pipenv locked Python version](https://img.shields.io/github/pipenv/locked/python-version/k1wsatz/camp-app-one)
-
+[![GitHub issues](https://img.shields.io/github/issues/k1wsatz/camp-app-one)](https://github.com/k1wsatz/camp-app-one/issues)
+![PyPI - Django Version](https://img.shields.io/pypi/djversions/django)
 
 # Camp app
 This is a simple camp app for people to search, add and reserve camping.
