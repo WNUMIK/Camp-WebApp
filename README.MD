@@ -8,6 +8,8 @@ This is a simple camp app for people to search, add and reserve camping.
 ![Logo](https://cdn4.iconfinder.com/data/icons/transportation-190/1000/camper_camper_car_camp_car_campsite_camper_van_bus-512.png)
 
 
+## Demo:
+http://mwcamp.herokuapp.com/
 
 ## Features
 
