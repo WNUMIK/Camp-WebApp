@@ -3,21 +3,31 @@
 ![Docker Automated build](https://img.shields.io/docker/automated/k1wsatz/camp-app-one) 
 ![GitHub Pipenv locked Python version](https://img.shields.io/github/pipenv/locked/python-version/k1wsatz/camp-app-one)
 
-
+# Camp app
+This is a simple camp app for people to search, add and reserve camping.
 ![Logo](https://cdn4.iconfinder.com/data/icons/transportation-190/1000/camper_camper_car_camp_car_campsite_camper_van_bus-512.png)
 
 
+<<<<<<< HEAD
 # Camp app
 
 This is a simple camp app for people to search, add and reserve camping.
 
 ## Demo:
 http://mwcamp.herokuapp.com/
+=======
+## Demo:
+http://mwcamp.herokuapp.com/
+
+>>>>>>> bf669a433854536e63c48e59a8e749e26ccb908f
 ## Features
 
 
 - Fullscreen mode
 - Cross platform
+- Login & registry
+- Reserve or Add
+- Detail List
 
 
 ## Installation
