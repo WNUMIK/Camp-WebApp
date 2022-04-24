@@ -5,6 +5,9 @@ from django.urls import reverse
 
 
 def test_login_page(client):
+    """
+    Test login page
+    """
     url = reverse('users:login')
     response = client.get(url)
 
@@ -13,6 +16,9 @@ def test_login_page(client):
 
 
 def test_registration_user(db, client):
+    """
+    Test registration user
+    """
     response = client.post(reverse('users:registration'), data={
         'fullname': 'Tester',
         'email': 'tester@pytest.pl',
@@ -25,4 +31,7 @@ def test_registration_user(db, client):
 
 
 def test_login(user, client):
+    """
+    Test login user
+    """
     assert client.login(email='a@a.pl', password='testPass123')
