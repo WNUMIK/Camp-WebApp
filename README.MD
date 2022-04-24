@@ -4,12 +4,16 @@
 ![GitHub Pipenv locked Python version](https://img.shields.io/github/pipenv/locked/python-version/k1wsatz/camp-app-one)
 
 
+# Camp app
+This is a simple camp app for people to search, add and reserve camping.
 ![Logo](https://cdn4.iconfinder.com/data/icons/transportation-190/1000/camper_camper_car_camp_car_campsite_camper_van_bus-512.png)
 
 
-# Camp app
 
-This is a simple camp app for people to search, add and reserve camping.
+
+## Demo:
+http://mwcamp.herokuapp.com/
+
 
 
 ## Features
@@ -17,17 +21,40 @@ This is a simple camp app for people to search, add and reserve camping.
 
 - Fullscreen mode
 - Cross platform
+- Login & registry
+- Reserve or Add
+- Detail List
+
 
 
 ## Installation
 
-Clone camp-app-one with git
+
+Clone camp-app-one with git:
 
 ```bash
   git clone git@github.com:k1wsatz/camp-app-one.git
   cd camp-app-one
 ```
+
     
+Setup a local development environment:
+
+`pipenv shell`
+
+Install development dependencies:
+
+`pipenv install -r requirements.txt`
+
+Migrate Database:
+
+`python manage.py migrate`
+
+Run the web application locally:
+
+`python manage.py runserver`
+
+
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file. You can also use file `.env-default`, put there your own data and rename it to `.env` than run command `source env/.env` in terminal to activate.

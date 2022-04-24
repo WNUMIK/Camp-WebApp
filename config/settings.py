@@ -41,8 +41,10 @@ INSTALLED_APPS = [
 
     # 3rd party
     'debug_toolbar',
+    'django_heroku',
     'crispy_forms',
     'crispy_bootstrap5',
+    'whitenoise.runserver_nostatic',
 
     # local
     'home.apps.HomeConfig',
@@ -53,7 +55,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -93,14 +95,12 @@ DATABASES = {
     }
 }
 
-
 DATABASE_URL = os.environ.get('DATABASE_URL')
-db_from_env = dj_database_url.config(
-    default=DATABASE_URL
-)
+db_from_env = dj_database_url.config(conn_max_age=500,
+                                     default=DATABASE_URL
+                                     )
 
 DATABASES['default'].update(db_from_env)
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -142,9 +142,10 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder'
 ]
 
-MEDIA_URL = 'media/'
+MEDIA_URL = 'http://s3.amazonaws.com/campbucket/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -157,15 +158,5 @@ LOGIN_REDIRECT_URL = 'home:home'
 LOGOUT_REDIRECT_URL = 'home:home'
 
 AUTH_USER_MODEL = 'users.Account'
-AUTH_PROFILE_MODULE = 'users.UserProfile'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-# DJ RESERVATION
-# DEFAULT_FROM_EMAIL = "mail@example.com"
-# EMAIL_HOST = "localhost"
-# EMAIL_PORT = "5432"
-
-# STAR_RATINGS_ANONYMOUS = True
-
-CSRF_TRUSTED_ORIGINS = ('https://bbcamp.herokuapp.com/',)
+CSRF_TRUSTED_ORIGINS = ('https://mwcamp.herokuapp.com/',)
