@@ -57,3 +57,4 @@ def test_register_page(client):
 
     assert response.status_code == 200
 
+
