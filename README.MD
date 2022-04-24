@@ -3,6 +3,7 @@
 ![Docker Automated build](https://img.shields.io/docker/automated/k1wsatz/camp-app-one) 
 ![GitHub Pipenv locked Python version](https://img.shields.io/github/pipenv/locked/python-version/k1wsatz/camp-app-one)
 
+
 # Camp app
 This is a simple camp app for people to search, add and reserve camping.
 ![Logo](https://cdn4.iconfinder.com/data/icons/transportation-190/1000/camper_camper_car_camp_car_campsite_camper_van_bus-512.png)
@@ -12,6 +13,7 @@ This is a simple camp app for people to search, add and reserve camping.
 
 ## Demo:
 http://mwcamp.herokuapp.com/
+
 
 
 ## Features
@@ -24,7 +26,9 @@ http://mwcamp.herokuapp.com/
 - Detail List
 
 
+
 ## Installation
+
 
 Clone camp-app-one with git:
 
@@ -33,6 +37,7 @@ Clone camp-app-one with git:
   cd camp-app-one
 ```
 
+    
 Setup a local development environment:
 
 `pipenv shell`
@@ -48,6 +53,7 @@ Migrate Database:
 Run the web application locally:
 
 `python manage.py runserver`
+
 
 ## Environment Variables
 
