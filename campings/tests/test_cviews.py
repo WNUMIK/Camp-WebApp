@@ -33,4 +33,3 @@ def test_reservation_permission(client):
     response = client.get(url)
 
     assert response.status_code == 403
-

@@ -7,6 +7,9 @@ from . import forms
 
 
 def login_user_view(request):
+    """
+    Loging authenticated user and redirecting to home page if logged successfully else reject login
+    """
     if request.method == 'POST':
         form = forms.LoginForm(request, request.POST)
 
@@ -26,11 +29,17 @@ def login_user_view(request):
 
 
 def logout_user(request):
+    """
+    Logging out authenticated user
+    """
     logout(request)
     return redirect(reverse('users:login'))
 
 
 def registration_view(request):
+    """
+    Register user using RegistrationForm, checking for permissions and adding user to preferred group
+    """
     form = forms.RegistrationForm(request.POST or None, request.FILES or None)
     if request.method == 'POST':
         if form.is_valid():
