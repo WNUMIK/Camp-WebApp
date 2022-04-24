@@ -1,6 +1,3 @@
-
-
-![Docker Automated build](https://img.shields.io/docker/automated/k1wsatz/camp-app-one) 
 ![GitHub Pipenv locked Python version](https://img.shields.io/github/pipenv/locked/python-version/k1wsatz/camp-app-one)
 
 
