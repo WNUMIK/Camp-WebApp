@@ -9,6 +9,10 @@ from . import forms
 def login_user_view(request):
     """
     Loging authenticated user and redirecting to home page if logged successfully else reject login
+
+    Using Form object to validate data
+
+    Using cleaned_data to normalize data
     """
     if request.method == 'POST':
         form = forms.LoginForm(request, request.POST)
@@ -39,6 +43,10 @@ def logout_user(request):
 def registration_view(request):
     """
     Register user using RegistrationForm, checking for permissions and adding user to preferred group
+
+    Using Form to validate data
+
+    Using cleaned_data to normalize data
     """
     form = forms.RegistrationForm(request.POST or None, request.FILES or None)
     if request.method == 'POST':
