@@ -102,5 +102,5 @@ To run tests, run the following command
 
 ## Authors
 
-- [@k1wsatz](https://www.github.com/k1wsatz
+- [@k1wsatz](https://www.github.com/k1wsatz)
 
