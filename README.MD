@@ -1,3 +1,7 @@
+[![](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://github.com/k1wsatz/charity/issues)
+[![](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)](https://github.com/k1wsatz/charity/network)
+[![](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)](https://github.com/k1wsatz/charity/stargazers)
+[![](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://github.com/k1wsatz/charity/stargazers)
 ![GitHub Pipenv locked Python version](https://img.shields.io/github/pipenv/locked/python-version/k1wsatz/camp-app-one)
 [![GitHub issues](https://img.shields.io/github/issues/k1wsatz/camp-app-one)](https://github.com/k1wsatz/camp-app-one/issues)
 [![GitHub forks](https://img.shields.io/github/forks/k1wsatz/camp-app-one)](https://github.com/k1wsatz/camp-app-one/network)
